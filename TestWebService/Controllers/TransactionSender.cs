@@ -239,10 +239,8 @@ namespace TestWebService.Controllers
 				}
 
 				var restBaseUrl = ConfigurationManager.AppSettings["TransactionServiceBaseAddress"];
-				//"https://gateway-classictxn-dev.eks.ehost-devqa.eislz.com/public";
-
-
-				var targetServicePath = "activemq:failover:(tcp://ads1-txnlogamq.epnet.com:61616?keepAlive=true)";
+				
+				var targetServicePath = "activemq:failover:(tcp://amq_server_and_port?keepAlive=true)";
 
                 _sender = TxnSenderBuilder.New(TimeSpan.FromSeconds(15),
 					new RestClientConfig(
